@@ -1,7 +1,7 @@
 #ifndef SOCKETWRAPPERS_H
 #define SOCKETWRAPPERS_H
 
-#include <studio.h>
+#include <stdio.h>
 #include <errno.h>
 #include <netinet/in.h>
 #include <netdb.h>
@@ -21,6 +21,6 @@ int Listen(int socket, int size);
 void SetNonBlocking(int socket);
 int Accept(int socket, struct sockaddr *addr, socklen_t *addrlen);
 void ServerConfig(struct sockaddr_in *servaddr, int port);
-void ClientConfig(struct_in *servaddr, const char* ip, int port);
+void ClientConfig(struct sockaddr_in *servaddr, const char* ip, int port);
 
 #endif

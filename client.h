@@ -1,7 +1,7 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include "socketwrapper.h"
+#include "socketwrappers.h"
 #include <netinet/in.h>
 #include <iostream>
 #include <strings.h>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class client {
+class Client {
     public:
         Client(const char* ip, int port);
         int GetSocket();
