@@ -23,7 +23,6 @@ class Server{
         int GetSocket();
     private:
         int listenfd, connectfd;
-        char transferIP[BUFLEN];
         struct sockaddr_in servaddr,adr;
 
 };

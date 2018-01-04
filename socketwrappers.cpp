@@ -91,3 +91,10 @@ void ClientConfig(struct sockaddr_in *servaddr, const char* ip, int port){
     bcopy(hp->h_addr, (char*) &servaddr->sin_addr, hp->h_length);
 
 }
+
+void Reuse(int socket){
+  int y;
+  if(setsockopt(socket, SOL_SOCKET, SO_REUSEADDR, &y, sizeof(int)) == -1){
+    perror("setsockopt");
+  }
+}

@@ -3,6 +3,4 @@
 
 int main(int argc, char *argv[]){
   Server *server = new Server(7005);
-
-  SetNonBlocking(server->GetSocket());
 }
