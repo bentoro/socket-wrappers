@@ -5,7 +5,7 @@ using namespace std;
 int Socket(int family, int type, int protocol){
     int sockfd;
 
-    if((sockfd = (socket(family, type, protocol)) < 0){
+    if((sockfd = (socket(family, type, protocol))) < 0){
         printf("socket error\n");
         return -1;
     }
@@ -15,7 +15,7 @@ int Socket(int family, int type, int protocol){
 int Bind(int socket, struct sockaddr_in *addr){
     int sockfd;
 
-    if((sockfd = (bind(socket,(struct sockaddr*)addr, sizeof(struct sockaddr*))) < 0){
+    if((sockfd = (bind(socket,(struct sockaddr*)addr, sizeof(struct sockaddr*)))) < 0){
         perror("binding error");
         close(socket);
         return -1;
@@ -24,11 +24,10 @@ int Bind(int socket, struct sockaddr_in *addr){
     return sockfd;
 }
 
-bool Connect(int socket, const struct sockarr_in sockaddr){
-    int sockfd;
+bool Connect(int socket, struct sockaddr_in sockaddr){
 
     if(connect(socket, (struct sockaddr *)&sockaddr, sizeof(sockaddr)) == -1){
-        prtinf("Client: can't connect to the server \n");
+        printf("Client: can't connect to the server \n");
         return false;
     }
 
@@ -79,7 +78,7 @@ void ServerConfig(struct sockaddr_in *servaddr, int port){
     servaddr->sin_port = htons (port);
 }
 
-void ClientConfig(struct_in *servaddr, const char* ip, int port){
+void ClientConfig(struct sockaddr_in *servaddr, const char* ip, int port){
     hostent* hp;
 
     if((hp = gethostbyname(ip)) == NULL){

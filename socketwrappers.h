@@ -16,7 +16,7 @@
 
 int Socket(int family, int type, int protocol);
 int Bind(int socket, struct sockaddr_in *addr);
-bool Connect(int socket, const struct sockarr_in sockaddr);
+bool Connect(int socket, struct sockaddr_in sockaddr);
 int Listen(int socket, int size);
 void SetNonBlocking(int socket);
 int Accept(int socket, struct sockaddr *addr, socklen_t *addrlen);
