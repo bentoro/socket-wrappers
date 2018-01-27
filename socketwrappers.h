@@ -23,5 +23,4 @@ int Accept(int socket, struct sockaddr *addr, socklen_t *addrlen);
 void ServerConfig(struct sockaddr_in *servaddr, int port);
 void ClientConfig(struct sockaddr_in *servaddr, const char* ip, int port);
 void Reuse (int socket);
-
 #endif
